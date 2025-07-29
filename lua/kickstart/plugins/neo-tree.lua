@@ -16,9 +16,16 @@ return {
   opts = {
     filesystem = {
       window = {
+        position = 'float',
         mappings = {
           ['\\'] = 'close_window',
         },
+      },
+    },
+    nesting_rules = {
+      ['svelte'] = {
+        pattern = '(.+)%.svelte$',
+        files = { '%1.server.ts', '%1.ts' },
       },
     },
   },
